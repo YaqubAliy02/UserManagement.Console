@@ -1,6 +1,5 @@
 ﻿using UserManagement.Console.Brokers.Storages;
 using UserManagement.Console.Models;
-
 namespace UserManagement.Console.Services
 {
     internal class LogInService
@@ -10,7 +9,6 @@ namespace UserManagement.Console.Services
         {
             this.storagesBroker = new FileStoragesBroker();
         }
-
         public bool CheckUserLogIn(Credential credential)
         {
             foreach(Credential credentialItem in storagesBroker.GetAllCredentials())
@@ -22,7 +20,5 @@ namespace UserManagement.Console.Services
             }
             return false;
         }
-
     }
-    
 }
