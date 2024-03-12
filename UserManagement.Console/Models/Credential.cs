@@ -1,5 +1,4 @@
-﻿
-namespace UserManagement.Console.Models
+﻿namespace UserManagement.Console.Models
 {
     internal class Credential
     {

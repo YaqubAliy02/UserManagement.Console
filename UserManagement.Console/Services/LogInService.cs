@@ -32,19 +32,21 @@ namespace UserManagement.Console.Services
             }
             else
             {
-                return this.storagesBroker.AddCredential(credential);
+                this.loggingBroker.LogSuccessUser("Signed Up Successfully");
+                return this.storagesBroker.AddCredential(credential);          
             }
         }
-        public bool CheckUserLogIn(Credential credential)
+        public void CheckCredentialLogIn(Credential credential)
         {
-            foreach(Credential credentialItem in storagesBroker.GetAllCredentials())
+            if(storagesBroker.CheckUserLogIn(credential))
             {
-                if(credentialItem.UserName == credential.UserName && credentialItem.Password == credential.Password)
-                {
-                    return true;
-                }
+                this.loggingBroker.LogSuccessUser("Welcome to our website");
             }
-            return false;
+            else
+            {
+                this.loggingBroker.LogInformation("Not found this user, Please Sign Up");
+            }
         }
+
     }
 }
