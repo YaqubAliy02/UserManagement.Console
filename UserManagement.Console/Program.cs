@@ -9,10 +9,7 @@ namespace UserManagement
         static void Main(string[] args)
         {
             LogInService logInService = new LogInService();
-
             string userChoice;
-
-
             do
             {
                 Print();

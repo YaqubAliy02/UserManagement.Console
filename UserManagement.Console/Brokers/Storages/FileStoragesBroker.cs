@@ -1,5 +1,4 @@
 ﻿using UserManagement.Console.Models;
-
 namespace UserManagement.Console.Brokers.Storages
 {
     internal class FileStoragesBroker : IStoragesBroker
@@ -15,8 +14,6 @@ namespace UserManagement.Console.Brokers.Storages
             new Credential { UserName = "YaqubAliy", Password = "1234" },
             new Credential { UserName = "Temur", Password = "1234" }
         };
-
-
         public Credential AddCredential(Credential credential)
         {
             string userLine = $"{credential.UserName}-{credential.Password}";

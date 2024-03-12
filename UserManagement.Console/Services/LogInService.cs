@@ -12,14 +12,12 @@ namespace UserManagement.Console.Services
             this.storagesBroker = new FileStoragesBroker();
             this.loggingBroker = new LoggingBroker();
         }
-
         public Credential AddCredential(Credential credential)
         {
             return credential is null
                  ? AddCredentialAndLogInvalidUser()
                  : ValidateAndAddCredential(credential);
         }
-
         private Credential AddCredentialAndLogInvalidUser()
         {
             this.loggingBroker.LogError("Credential is invalid");
@@ -37,7 +35,6 @@ namespace UserManagement.Console.Services
                 return this.storagesBroker.AddCredential(credential);
             }
         }
-
         public bool CheckUserLogIn(Credential credential)
         {
             foreach(Credential credentialItem in storagesBroker.GetAllCredentials())
@@ -49,7 +46,5 @@ namespace UserManagement.Console.Services
             }
             return false;
         }
-
-     
     }
 }
