@@ -5,7 +5,7 @@ namespace UserManagement.Console.Brokers.Storages
 {
     internal interface IStoragesBroker
     {
-        /*Credential AddUser(Credential user);*/
+        Credential AddCredential(Credential credential);
         Credential[] GetAllCredentials();
 
     }
