@@ -12,6 +12,7 @@ namespace UserManagement.Console.Services
             this.storagesBroker = new FileStoragesBroker();
             this.loggingBroker = new LoggingBroker();
         }
+        
         public Credential AddCredential(Credential credential)
         {
             return credential is null
@@ -36,7 +37,7 @@ namespace UserManagement.Console.Services
                 return this.storagesBroker.AddCredential(credential);          
             }
         }
-        public void CheckCredentialLogIn(Credential credential)
+        public void CheckCredentialLogIn(Credential credential) // I will change this method to try catch exception handling
         {
             if(storagesBroker.CheckUserLogIn(credential))
             {

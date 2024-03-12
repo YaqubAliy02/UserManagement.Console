@@ -50,9 +50,9 @@ namespace UserManagement
                                     System.Console.WriteLine("Exiting program...");
                                     break;
                                 }
-                            default:
+                             default:
                                 {
-                                    throw new Exception("Invalid choice. Please enter a valid option.");
+                                     throw new Exception("Invalid choice. Please enter a valid option.");
                                 }
                         }
                     }
@@ -61,11 +61,10 @@ namespace UserManagement
                         System.Console.WriteLine("Invalid input. Please enter a valid integer choice.");
                         choice = -1;
                     }
-                    catch (Exception exception)
-                    {
-                        System.Console.WriteLine(exception.Message);
-                    }
-
+                    catch(Exception exception)
+                     {
+                    System.Console.WriteLine(exception.Message);
+                }
                 System.Console.Write("Do you want to continue yes(y) or no(n): ");
                 string continueChoice = System.Console.ReadLine();
 
