@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-namespace UserManagement.Console.Brokers.Loggings
+﻿namespace UserManagement.Console.Brokers.Loggings
 {
     internal interface ILoggingBroker
     {

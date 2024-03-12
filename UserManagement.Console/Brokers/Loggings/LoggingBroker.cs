@@ -17,7 +17,6 @@
         public void LogInformation(string message)
         {
             System.Console.WriteLine(message);
-            System.Console.ResetColor();
         }
         public void LogSuccessUser(string message)
         {

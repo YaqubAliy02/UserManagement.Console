@@ -1,12 +1,10 @@
-﻿
-using UserManagement.Console.Models;
-
+﻿using UserManagement.Console.Models;
 namespace UserManagement.Console.Brokers.Storages
 {
     internal interface IStoragesBroker
     {
         Credential AddCredential(Credential credential);
         Credential[] GetAllCredentials();
-
+        bool CheckUserLogIn(Credential credential);
     }
 }
