@@ -33,17 +33,6 @@ namespace UserManagement.Console.Brokers.Storages
             }
             return credentials;
         }
-        public bool CheckUserLogIn(Credential credential)
-        {
-            foreach (Credential credentialItem in GetAllCredentials())
-            {
-                if (credentialItem.UserName == credential.UserName && credentialItem.Password == credential.Password)
-                {
-                  return true;
-                }
-            }
-            return false;
-        }
         private void  EnsureFileExists()
         {
             bool fileExists = File.Exists(FILEPATH);

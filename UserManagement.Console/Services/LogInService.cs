@@ -37,16 +37,19 @@ namespace UserManagement.Console.Services
                 return this.storagesBroker.AddCredential(credential);          
             }
         }
-        public void CheckCredentialLogIn(Credential credential) // I will change this method to try catch exception handling
+        public bool CheckCredentialLogIn(Credential credential) // I will change this method to try catch exception handling
         {
-            if(storagesBroker.CheckUserLogIn(credential))
+            Credential[] credentials = this.storagesBroker.GetAllCredentials();
+
+            foreach(var cred  in credentials)
             {
-                this.loggingBroker.LogSuccessUser("Welcome to our website");
+                if(cred.UserName == credential.UserName && cred.Password == credential.Password)
+                {
+                    return true;
+                }
             }
-            else
-            {
-                this.loggingBroker.LogInformation("Not found this user, Please Sign Up");
-            }
+
+            return false;
         }
 
     }

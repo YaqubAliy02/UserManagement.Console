@@ -5,6 +5,5 @@ namespace UserManagement.Console.Brokers.Storages
     {
         Credential AddCredential(Credential credential);
         Credential[] GetAllCredentials();
-        bool CheckUserLogIn(Credential credential);
     }
 }
