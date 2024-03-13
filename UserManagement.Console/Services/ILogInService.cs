@@ -3,7 +3,7 @@ namespace UserManagement.Console.Services
 {
     internal interface ILogInService
     {
-        void CheckCredentialLogIn(Credential credential);
+        bool CheckCredentialLogIn(Credential credential);
         Credential AddCredential(Credential credential);
     }
 }
